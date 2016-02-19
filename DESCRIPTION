@@ -7,6 +7,7 @@ Author: Boris Demeshev
 Maintainer: Boris Demeshev <boris.demeshev@gmail.com>
 Description: Convert coursera xml tests into edx xml tests.
 Imports: dplyr (>= 0.4),
+  stringr (>= 1.0.0),
   XML (>= 3.98-1.3),
   reshape2 (>= 1.4.1)
 License: GPL-2

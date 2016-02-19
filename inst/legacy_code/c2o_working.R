@@ -1,4 +1,10 @@
-source("coursera2openedu.R")
+
+
+library("XML")
+library("dplyr")
+library("edxr")
+library("stringr")
+
 
 folder <- "~/Documents/coursera_metrics/tests/"
 fnames <- list.files(folder, full.names = TRUE)
