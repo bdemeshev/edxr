@@ -2,20 +2,6 @@
 
 
 
-
-
-# get type of a version (numeric/checkbox/radio)
-GetType <- function(version) {
-  meta <- version[["metadata"]][["parameters"]]
-
-  type <- XML::xmlValue(meta[["type"]])
-  choice_type <- XML::xmlValue(meta[["choice_type"]])
-
-  if (is.na(type)) type <- choice_type
-  return(type)
-}
-GetType(v_num)
-
 # get text from version
 GetText <- function(version) {
   text <- XML::xmlValue(version[["data"]][["text"]])

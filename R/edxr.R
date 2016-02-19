@@ -207,3 +207,28 @@ ChildNames <- function(node) {
   return(XML::xmlSApply(node, XML::xmlName))
 }
 
+
+
+#' get type of a version (numeric/checkbox/radio)
+#'
+#' get type of a version (numeric/checkbox/radio)
+#'
+#' get type of a version (numeric/checkbox/radio)
+#'
+#' @param version xml tree of version
+#' @return character type of version
+#' @export
+#' @examples
+#' test_01_path <- system.file("extdata", "week_01_test_01_ibcorr.xml", package = "edxr")
+#' doc <- XML::xmlTreeParse(test_01_path)
+#' v_num <- GetVersion(doc, 10, 1)
+#' GetType(v_num)
+GetType <- function(version) {
+  meta <- version[["metadata"]][["parameters"]]
+
+  type <- XML::xmlValue(meta[["type"]])
+  choice_type <- XML::xmlValue(meta[["choice_type"]])
+
+  if (is.na(type)) type <- choice_type
+  return(type)
+}
